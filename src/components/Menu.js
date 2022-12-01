@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Menu = () => {
   return (
-    <div className="menu">
+    <section className="menu">
       <Link to="/home">
         <h2>Home</h2>
       </Link>
@@ -188,7 +188,7 @@ const Menu = () => {
           <p>RPG</p>
         </div>
       </Link>
-    </div>
+    </section>
   );
 };
 

@@ -14,7 +14,12 @@ a {
   color: white;
 }
 
-/* header */
+h1 {
+  font-size: 72px;
+  font-weight: 700;
+}
+
+/* =======> header <======= */
 .header {
   max-width: 1200px;
   margin: 0 auto;
@@ -58,9 +63,9 @@ a {
   color: white;
 }
 
-/* Menu principal */
+/* =======> Menu principal <======= */
 .menu {
-  border: solid 1px green;
+  /* border: solid 1px green; */
   width: 200px;
   margin-top: 45px;
 }
@@ -102,4 +107,57 @@ a {
   background-color: white;
   color: black;
   cursor: pointer;
+}
+
+/* =======> page Home <======= */
+.section-home {
+  /* border: solid 1px yellow; */
+  display: flex;
+  gap: 10px;
+}
+
+.home {
+  /* border: solid 1px red; */
+  margin-top: 35px;
+  flex: 1;
+}
+
+.all-games {
+  border: solid 1px green;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+
+.game {
+  border: solid 1px purple;
+  width: 260px;
+  height: 325px;
+}
+
+.game img {
+  width: 260px;
+  height: 150px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.title-game {
+  background-color: #151515;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.title-game p {
+  color: #575757;
+  font-size: 12px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
