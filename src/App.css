@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+/* https://api.rawg.io/api/games?key=373c0a426b8e43d19559088f49c43527 */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  color: white;
+  background-color: black;
+  font-family: "Roboto", sans-serif;
+  padding: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* header */
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo-rawg {
+  font-weight: 900;
+  letter-spacing: 5px;
+}
+
+.logo-search {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-search input {
+  border: none;
+  background-color: gray;
+  width: 100%;
+  height: 44px;
+  border-radius: 24px;
+}
+
+.signup-login {
+  margin-left: 30px;
+  display: flex;
+  gap: 30px;
+}
+
+.signup-login span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.icon {
+  color: white;
+}
+
+/* Menu principal */
+.menu {
+  border: solid 1px green;
+  width: 200px;
+  margin-top: 45px;
+}
+
+.menu h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+.menu p {
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.litle-menu {
+  /* border: solid 1px red; */
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.icon-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: rgb(46, 46, 46);
+  border-radius: 5px;
+}
+
+.litle-menu:hover {
+  cursor: pointer;
+}
+.litle-menu:hover .icon-menu {
+  background-color: white;
+  color: black;
+  cursor: pointer;
 }
