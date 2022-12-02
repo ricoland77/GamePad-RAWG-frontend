@@ -1,5 +1,6 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 // import des routes
 import Home from "./components/Home";
@@ -57,12 +58,17 @@ library.add(
 );
 
 function App() {
+  const [search, setSearch] = useState("");
+
   return (
     <Router>
-      <Header />
+      <Header search={search} setSearch={setSearch} />
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/games/:name" element={<Game />} />
+        <Route
+          path="/home"
+          element={<Home search={search} setSearch={setSearch} />}
+        />
+        <Route path="/games/:id" element={<Game />} />
         <Route path="/reviews/popular" element={<Reviews />} />
         <Route path="/discover/last-30-days" element={<LastThirtyDays />} />
         <Route path="/discover/this-week" element={<ThisWeek />} />

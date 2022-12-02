@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
-const Home = () => {
+const Home = (search, setSearch) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -12,7 +12,7 @@ const Home = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://api.rawg.io/api/games?key=373c0a426b8e43d19559088f49c43527"
+          `https://api.rawg.io/api/games?key=373c0a426b8e43d19559088f49c43527&search=${search}`
         );
         // console.log("ok=>", response.data);
         setData(response.data);
@@ -22,7 +22,7 @@ const Home = () => {
       }
     };
     fetchData();
-  }, []);
+  }, [search]);
 
   return isLoading ? (
     <p>Loading...</p>
@@ -36,7 +36,7 @@ const Home = () => {
             return (
               <div key={index}>
                 <div className="game">
-                  <Link to={`/games/${game.name}`}>
+                  <Link to={`/games/${game.id}`}>
                     <img src={game.background_image} alt="" />
                   </Link>
                   <div className="title-game">

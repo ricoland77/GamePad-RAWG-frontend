@@ -123,7 +123,7 @@ h1 {
 }
 
 .all-games {
-  border: solid 1px green;
+  /* border: solid 1px green; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -131,7 +131,7 @@ h1 {
 }
 
 .game {
-  border: solid 1px purple;
+  /* border: solid 1px purple; */
   width: 260px;
   height: 325px;
 }
@@ -141,6 +141,7 @@ h1 {
   height: 150px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+  box-shadow: rgb(50, 50, 50) 0px 8px 24px;
 }
 
 .title-game {
@@ -160,4 +161,57 @@ h2 {
   font-weight: 700;
   margin-top: 5px;
   margin-bottom: 10px;
+}
+
+/* =======> page Détail du jeu <======= */
+
+.detail-game {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  padding: 30px;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+
+.detail-game img {
+  width: 600px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.detail-game .small-image {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.release {
+  font-weight: 100;
+  margin-top: 30px;
+}
+
+.title {
+  margin-top: 10px;
+}
+
+.carousel-game {
+  /* border: solid 1px purple; */
+  width: 920px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.carousel {
+  /* border: solid 1px purple; */
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-game img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
 }

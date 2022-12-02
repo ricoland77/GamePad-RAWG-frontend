@@ -1,14 +1,21 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = () => {
+const Header = ({ search, setSearch }) => {
   return (
     <div className="header">
       <div className="logo-search">
         <Link to="/home">
           <span className="logo-rawg">RAWG</span>
         </Link>
-        <input type="search" />
+        <input
+          value={search}
+          type="search"
+          placeholder="Rechercher un jeu"
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+        />
       </div>
       <div className="signup-login">
         <span>LOG IN</span>
