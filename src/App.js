@@ -27,6 +27,7 @@ import Android from "./components/Android";
 import Action from "./components/Action";
 import Strategy from "./components/Strategy";
 import RPG from "./components/RPG";
+import Signup from "./components/Signup";
 
 // import FontAwesome
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -59,6 +60,7 @@ library.add(
 
 function App() {
   const [search, setSearch] = useState("");
+  const [genres, setGenres] = useState("");
 
   return (
     <Router>
@@ -68,6 +70,7 @@ function App() {
           path="/home"
           element={<Home search={search} setSearch={setSearch} />}
         />
+        <Route path="/user/signup" element={<Signup />} />
         <Route path="/games/:id" element={<Game />} />
         <Route path="/reviews/popular" element={<Reviews />} />
         <Route path="/discover/last-30-days" element={<LastThirtyDays />} />
@@ -87,9 +90,18 @@ function App() {
         <Route path="/games/nintendo-switch" element={<Nintendo />} />
         <Route path="/games/ios" element={<IOS />} />
         <Route path="/games/android" element={<Android />} />
-        <Route path="/games/action" element={<Action />} />
-        <Route path="/games/strategy" element={<Strategy />} />
-        <Route path="/games/role-playing-games-rpg" element={<RPG />} />
+        <Route
+          path="/games/action"
+          element={<Action genres={genres} setGenres={setGenres} />}
+        />
+        <Route
+          path="/games/strategy"
+          element={<Strategy genres={genres} setGenres={setGenres} />}
+        />
+        <Route
+          path="/games/role-playing-games-rpg"
+          element={<RPG genres={genres} setGenres={setGenres} />}
+        />
       </Routes>
     </Router>
   );

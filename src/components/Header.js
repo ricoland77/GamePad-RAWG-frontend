@@ -19,7 +19,9 @@ const Header = ({ search, setSearch }) => {
       </div>
       <div className="signup-login">
         <span>LOG IN</span>
-        <span>SIGN UP</span>
+        <Link to="/user/signup">
+          <span>SIGN UP</span>
+        </Link>
         <span>API</span>
         <span className="icon">
           <FontAwesomeIcon icon="bars" />

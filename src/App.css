@@ -19,6 +19,18 @@ h1 {
   font-weight: 700;
 }
 
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* =======> header <======= */
 .header {
   max-width: 1200px;
@@ -41,11 +53,13 @@ h1 {
 }
 
 .logo-search input {
+  padding-left: 20px;
   border: none;
   background-color: gray;
   width: 100%;
   height: 44px;
   border-radius: 24px;
+  outline: none;
 }
 
 .signup-login {
@@ -144,6 +158,14 @@ h1 {
   box-shadow: rgb(50, 50, 50) 0px 8px 24px;
 }
 
+.game img:hover {
+  box-sizing: border-box;
+  border-width: 2px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), red) 0 100%;
+  opacity: 75%;
+}
+
 .title-game {
   background-color: #151515;
   padding: 10px;
@@ -156,6 +178,18 @@ h1 {
   font-size: 12px;
 }
 
+.title-game h2 {
+  margin-top: 20px;
+}
+
+.platforms-names {
+  line-height: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: flex-end;
+}
+
 h2 {
   font-size: 24px;
   font-weight: 700;
@@ -166,7 +200,7 @@ h2 {
 /* =======> page Détail du jeu <======= */
 
 .detail-game {
-  width: 100vw;
+  width: 90vw;
   display: flex;
   justify-content: center;
   margin-top: 100px;
@@ -194,6 +228,7 @@ h2 {
 
 .title {
   margin-top: 10px;
+  font-size: 30px;
 }
 
 .carousel-game {
@@ -207,11 +242,150 @@ h2 {
 .carousel {
   /* border: solid 1px purple; */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel p {
+  padding-bottom: 4px;
+  border-bottom: solid 1px white;
+  font-size: 38px;
+  font-weight: 100;
+  margin-bottom: 25px;
 }
 
 .carousel-game img {
   width: 300px;
   height: 200px;
   object-fit: cover;
+}
+
+/* =======> page SignUp <======= */
+.signup {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 200px;
+  gap: 200px;
+}
+.signup-left {
+  /* border: solid 1px red; */
+  width: 300px;
+}
+
+.signup-left h2 {
+  font-size: 44px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.signup-right h2 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.signup-right {
+  width: 325px;
+}
+
+.signup-right div {
+  width: 325px;
+  margin-bottom: 25px;
+}
+
+.form-signup {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.input-signup {
+  color: white;
+  font-size: 18px;
+  background-color: rgb(33, 33, 33);
+  height: 50px;
+  padding-left: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+}
+
+.btn-signup {
+  font-size: 18px;
+  background-color: white;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+
+.already {
+  font-weight: 100;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.social-account {
+  width: 100%;
+  height: 40px;
+  background-color: #4267b2;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-account img {
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.social-account-twitter {
+  width: 100%;
+  height: 40px;
+  background-color: #33a4ec;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-account-twitter img {
+  margin-left: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.social-account-steam {
+  width: 100%;
+  height: 40px;
+  background-color: #3d7193;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social-account-steam img {
+  margin-left: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+}
+
+.social-account span {
+  margin-right: 60px;
+}
+
+.social-account-twitter span {
+  margin-right: 70px;
+}
+
+.social-account-steam span {
+  margin-right: 70px;
 }

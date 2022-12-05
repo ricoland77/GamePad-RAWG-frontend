@@ -3,8 +3,9 @@ import Menu from "./Menu";
 import { Link } from "react-router-dom";
 
 import { useState, useEffect } from "react";
+import loader from "../assets/images/loader.gif";
 
-const Home = (search, setSearch) => {
+const Home = ({ search }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -14,7 +15,7 @@ const Home = (search, setSearch) => {
         const response = await axios.get(
           `https://api.rawg.io/api/games?key=373c0a426b8e43d19559088f49c43527&search=${search}`
         );
-        // console.log("ok=>", response.data);
+        // console.log("ok2=>", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -25,7 +26,9 @@ const Home = (search, setSearch) => {
   }, [search]);
 
   return isLoading ? (
-    <p>Loading...</p>
+    <div className="container">
+      <img className="loader" src={loader} alt="loader" />
+    </div>
   ) : (
     <section className="section-home">
       <Menu />
@@ -40,10 +43,12 @@ const Home = (search, setSearch) => {
                     <img src={game.background_image} alt="" />
                   </Link>
                   <div className="title-game">
+                    <div className="platforms-names">
+                      {game.parent_platforms.map((platform, index) => {
+                        return <p key={index}>{platform.platform.name}</p>;
+                      })}
+                    </div>
                     <h2>{game.name}</h2>
-                    {game.parent_platforms.map((platform, index) => {
-                      return <p key={index}>{platform.platform.name}</p>;
-                    })}
                   </div>
                 </div>
               </div>
