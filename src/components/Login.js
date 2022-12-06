@@ -7,7 +7,6 @@ import axios from "axios";
 
 const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -24,7 +23,6 @@ const Login = ({ handleToken }) => {
       //   console.log(response.data);
 
       if (response.data.token) {
-        // console.log(response.data.token);
         handleToken(response.data.token);
         navigate("/home");
       }
@@ -33,7 +31,8 @@ const Login = ({ handleToken }) => {
         setErrorMessage("Veuillez remplir tous les champs");
       }
     } catch (error) {
-      console.log(error.response);
+      console.log(error.message);
+      //   console.log(error.response);
     }
   };
 

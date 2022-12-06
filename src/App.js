@@ -1,6 +1,7 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState } from "react";
+import Cookies from "js-cookie";
 
 // import des routes
 import Home from "./components/Home";
@@ -60,8 +61,19 @@ library.add(
 );
 
 function App() {
+  const [token, setToken] = useState(Cookies.get("token") || null);
   const [search, setSearch] = useState("");
   const [genres, setGenres] = useState("");
+
+  const handleToken = (token) => {
+    if (token) {
+      setToken(token);
+      Cookies.set("token", token, { expires: 7 });
+    } else {
+      setToken(null);
+      Cookies.remove("token");
+    }
+  };
 
   return (
     <Router>
@@ -71,8 +83,14 @@ function App() {
           path="/home"
           element={<Home search={search} setSearch={setSearch} />}
         />
-        <Route path="/user/signup" element={<Signup />} />
-        <Route path="/user/login" element={<Login />} />
+        <Route
+          path="/user/signup"
+          element={<Signup handleToken={handleToken} />}
+        />
+        <Route
+          path="/user/login"
+          element={<Login handleToken={handleToken} />}
+        />
         <Route path="/games/:id" element={<Game />} />
         <Route path="/reviews/popular" element={<Reviews />} />
         <Route path="/discover/last-30-days" element={<LastThirtyDays />} />

@@ -6,36 +6,41 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 const Signup = ({ handleToken }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  const navigate = useNavigate();
-
   const handleClick = async (event) => {
     event.preventDefault();
 
-    try {
-      const response = await axios.post("http://localhost:4000/user/signup", {
-        email: email,
-        username: username,
-        password: password,
-      });
+    if (!email || !username || !password) {
+      setErrorMessage("Please complete all fields.");
+    } else if (!email.includes("@")) {
+      setErrorMessage("Your email is not valid.");
+    } else {
+      try {
+        const response = await axios.post("http://localhost:4000/user/signup", {
+          email: email,
+          username: username,
+          password: password,
+        });
 
-      //   console.log(response.data);
+        if (response.data.token) {
+          handleToken(response.data.token);
+        }
 
-      if (response.data.token) {
-        // console.log(response.data.token);
-        handleToken(response.data.token);
+        alert("Your account has been created");
         navigate("/home");
-      }
+      } catch (error) {
+        console.log(error.response.data.message);
+        const message = error.response.data.error;
 
-      if (!email || !password) {
-        setErrorMessage("Veuillez remplir tous les champs");
+        if (message === "User all ready exist") {
+          setErrorMessage(message);
+        }
       }
-    } catch (error) {
-      console.log(error.response);
     }
   };
 
@@ -72,6 +77,8 @@ const Signup = ({ handleToken }) => {
                 setPassword(event.target.value);
               }}
             />
+
+            <p className="error-message">{errorMessage}</p>
             <input
               type="submit"
               value="Sign up"
