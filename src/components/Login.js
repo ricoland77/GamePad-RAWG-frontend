@@ -5,7 +5,7 @@ import steam from "../assets/images/steam.png";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
-const Signup = ({ handleToken }) => {
+const Login = ({ handleToken }) => {
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,12 +17,10 @@ const Signup = ({ handleToken }) => {
     event.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:4000/user/signup", {
+      const response = await axios.post("http://localhost:4000/user/login", {
         email: email,
-        username: username,
         password: password,
       });
-
       //   console.log(response.data);
 
       if (response.data.token) {
@@ -40,10 +38,10 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <div>
+    <div className="background-login">
       <div className="signup">
         <section className="signup-left">
-          <h2>Sign up</h2>
+          <h2>Login</h2>
           <form className="form-signup">
             <input
               className="input-signup"
@@ -54,38 +52,30 @@ const Signup = ({ handleToken }) => {
                 setEmail(event.target.value);
               }}
             />
-            <input
-              className="input-signup"
-              value={username}
-              type="text"
-              placeholder="Username"
-              onChange={(event) => {
-                setUsername(event.target.value);
-              }}
-            />
+
             <input
               className="input-signup"
               value={password}
               type="password"
-              placeholder="Create a password"
+              placeholder="Password"
               onChange={(event) => {
                 setPassword(event.target.value);
               }}
             />
             <input
               type="submit"
-              value="Sign up"
+              value="Log in"
               className="btn-signup"
               onClick={handleClick}
             />
           </form>
-          <Link to="/user/login">
-            <p className="already">Already have an account? Log in</p>
+          <Link to="/user/signup">
+            <p className="already">Don't have an account? Sign up.</p>
           </Link>
         </section>
 
         <section className="signup-right">
-          <h2>You can use social accounts to sign up</h2>
+          <h2>You can use social accounts to log in</h2>
           <div className="social-account">
             <img src={facebook} alt="" />
             <span>Continue with Facebook</span>
@@ -104,4 +94,4 @@ const Signup = ({ handleToken }) => {
   );
 };
 
-export default Signup;
+export default Login;

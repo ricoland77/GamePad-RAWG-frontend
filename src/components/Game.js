@@ -18,7 +18,7 @@ const Game = () => {
         const response = await axios.get(
           `https://api.rawg.io/api/games/${id}?key=373c0a426b8e43d19559088f49c43527`
         );
-        // console.log("ok => ", response);
+        console.log("ok => ", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -42,10 +42,19 @@ const Game = () => {
             src={data.background_image_additional}
             alt=""
           />
-          <p className="release">{data.released}</p>
           <h2 className="title">{data.name}</h2>
+          <h3>Release date</h3>
+          <span className="release">{data.released}</span>
+          <h3>Rating</h3>
+          <span className="release">{data.rating}</span>
         </div>
       </section>
+      <div className="container-description">
+        <h3>About</h3>
+        <div className="about">
+          <p>{data.description_raw}</p>
+        </div>
+      </div>
       <section className="carousel">
         <p>Games like {data.name}</p>
         <Carousel showThumbs={false} showStatus={false}>

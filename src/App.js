@@ -28,6 +28,7 @@ import Action from "./components/Action";
 import Strategy from "./components/Strategy";
 import RPG from "./components/RPG";
 import Signup from "./components/Signup";
+import Login from "./components/Login";
 
 // import FontAwesome
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -71,6 +72,7 @@ function App() {
           element={<Home search={search} setSearch={setSearch} />}
         />
         <Route path="/user/signup" element={<Signup />} />
+        <Route path="/user/login" element={<Login />} />
         <Route path="/games/:id" element={<Game />} />
         <Route path="/reviews/popular" element={<Reviews />} />
         <Route path="/discover/last-30-days" element={<LastThirtyDays />} />

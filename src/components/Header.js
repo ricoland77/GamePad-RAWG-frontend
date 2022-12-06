@@ -18,7 +18,10 @@ const Header = ({ search, setSearch }) => {
         />
       </div>
       <div className="signup-login">
-        <span>LOG IN</span>
+        <Link to="/user/login">
+          <span>LOG IN</span>
+        </Link>
+
         <Link to="/user/signup">
           <span>SIGN UP</span>
         </Link>
