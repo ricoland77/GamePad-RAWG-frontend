@@ -6,6 +6,7 @@ import Cookies from "js-cookie";
 // import des routes
 import Home from "./components/Home";
 import Game from "./components/Game";
+import Favorites from "./components/Favorites";
 import Reviews from "./components/Reviews";
 import Header from "./components/Header";
 import LastThirtyDays from "./components/LastThirtyDays";
@@ -77,7 +78,12 @@ function App() {
 
   return (
     <Router>
-      <Header search={search} setSearch={setSearch} />
+      <Header
+        search={search}
+        setSearch={setSearch}
+        handleToken={handleToken}
+        token={token}
+      />
       <Routes>
         <Route
           path="/home"
@@ -92,6 +98,7 @@ function App() {
           element={<Login handleToken={handleToken} />}
         />
         <Route path="/games/:id" element={<Game />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/reviews/popular" element={<Reviews />} />
         <Route path="/discover/last-30-days" element={<LastThirtyDays />} />
         <Route path="/discover/this-week" element={<ThisWeek />} />

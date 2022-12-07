@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Header = ({ search, setSearch }) => {
+const Header = ({ search, setSearch, handleToken, token }) => {
   return (
     <div className="header">
       <div className="logo-search">
@@ -17,19 +17,30 @@ const Header = ({ search, setSearch }) => {
           }}
         />
       </div>
-      <div className="signup-login">
-        <Link to="/user/login">
-          <span>LOG IN</span>
-        </Link>
+      {token ? (
+        <button
+          className="btnDeconnexion"
+          onClick={() => {
+            handleToken(null);
+          }}
+        >
+          LOG OUT
+        </button>
+      ) : (
+        <div className="signup-login">
+          <Link to="/user/login">
+            <span>LOG IN</span>
+          </Link>
 
-        <Link to="/user/signup">
-          <span>SIGN UP</span>
-        </Link>
-        <span>API</span>
-        <span className="icon">
-          <FontAwesomeIcon icon="bars" />
-        </span>
-      </div>
+          <Link to="/user/signup">
+            <span>SIGN UP</span>
+          </Link>
+          <span>API</span>
+          <span className="icon">
+            <FontAwesomeIcon icon="bars" />
+          </span>
+        </div>
+      )}
     </div>
   );
 };

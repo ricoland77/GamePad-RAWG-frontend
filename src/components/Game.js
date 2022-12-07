@@ -10,15 +10,13 @@ const Game = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   const { id } = useParams();
-  // console.log(name);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `https://api.rawg.io/api/games/${id}?key=373c0a426b8e43d19559088f49c43527`
-        );
-        console.log("ok => ", response.data);
+        const response = await axios.get(`http://localhost:4000/game`);
+
+        // console.log("ok => ", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -50,8 +48,8 @@ const Game = () => {
         </div>
       </section>
       <div className="container-description">
-        <h3>About</h3>
         <div className="about">
+          <h3>About</h3>
           <p>{data.description_raw}</p>
         </div>
       </div>

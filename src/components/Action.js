@@ -43,10 +43,12 @@ const Action = ({ search }) => {
                     <img src={game.background_image} alt="" />
                   </Link>
                   <div className="title-game">
+                    <div className="platforms-names">
+                      {game.parent_platforms.map((platform, index) => {
+                        return <p key={index}>{platform.platform.name}</p>;
+                      })}
+                    </div>
                     <h2>{game.name}</h2>
-                    {game.parent_platforms.map((platform, index) => {
-                      return <p key={index}>{platform.platform.name}</p>;
-                    })}
                   </div>
                 </div>
               </div>

@@ -26,7 +26,6 @@ const Signup = ({ handleToken }) => {
           username: username,
           password: password,
         });
-
         if (response.data.token) {
           handleToken(response.data.token);
         }
@@ -35,9 +34,8 @@ const Signup = ({ handleToken }) => {
         navigate("/home");
       } catch (error) {
         console.log(error.response.data.message);
-        const message = error.response.data.error;
-
-        if (message === "User all ready exist") {
+        const message = error.response.data.message;
+        if (message === "This email already exist") {
           setErrorMessage(message);
         }
       }
@@ -45,7 +43,7 @@ const Signup = ({ handleToken }) => {
   };
 
   return (
-    <div>
+    <div className="background-signup">
       <div className="signup">
         <section className="signup-left">
           <h2>Sign up</h2>
@@ -78,7 +76,9 @@ const Signup = ({ handleToken }) => {
               }}
             />
 
+            {/* message d'erreur */}
             <p className="error-message">{errorMessage}</p>
+
             <input
               type="submit"
               value="Sign up"

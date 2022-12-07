@@ -13,7 +13,7 @@ const Home = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games?key=373c0a426b8e43d19559088f49c43527&search=${search}`
+          `http://localhost:4000/home?search=${search}`
         );
         // console.log("ok2=>", response.data);
         setData(response.data);

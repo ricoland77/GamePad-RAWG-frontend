@@ -8,9 +8,14 @@ const Menu = () => {
         <h2>Home</h2>
       </Link>
 
+      <Link to="/favorites">
+        <h2>Favorites</h2>
+      </Link>
+
       <Link to="/reviews/popular">
         <h2>Reviews</h2>
       </Link>
+
       <h2>New Releases</h2>
       <Link to="/discover/last-30-days">
         <div className="litle-menu">
