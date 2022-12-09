@@ -44,12 +44,31 @@ const Menu = () => {
         </div>
       </Link>
 
-      <Link to="/video-game-releases">
+      <h2>Genres</h2>
+      <Link to="/games/action">
         <div className="litle-menu">
           <div className="icon-menu">
             <FontAwesomeIcon icon="star" />
           </div>
-          <p>Release calendar</p>
+          <p>Action</p>
+        </div>
+      </Link>
+
+      <Link to="/games/strategy">
+        <div className="litle-menu">
+          <div className="icon-menu">
+            <FontAwesomeIcon icon="star" />
+          </div>
+          <p>Strategy</p>
+        </div>
+      </Link>
+
+      <Link to="/games/role-playing-games-rpg">
+        <div className="litle-menu">
+          <div className="icon-menu">
+            <FontAwesomeIcon icon="star" />
+          </div>
+          <p>RPG</p>
         </div>
       </Link>
 
@@ -163,34 +182,6 @@ const Menu = () => {
             <FontAwesomeIcon icon="star" />
           </div>
           <p>Android</p>
-        </div>
-      </Link>
-
-      <h2>Genres</h2>
-      <Link to="/games/action">
-        <div className="litle-menu">
-          <div className="icon-menu">
-            <FontAwesomeIcon icon="star" />
-          </div>
-          <p>Action</p>
-        </div>
-      </Link>
-
-      <Link to="/games/strategy">
-        <div className="litle-menu">
-          <div className="icon-menu">
-            <FontAwesomeIcon icon="star" />
-          </div>
-          <p>Strategy</p>
-        </div>
-      </Link>
-
-      <Link to="/games/role-playing-games-rpg">
-        <div className="litle-menu">
-          <div className="icon-menu">
-            <FontAwesomeIcon icon="star" />
-          </div>
-          <p>RPG</p>
         </div>
       </Link>
     </section>

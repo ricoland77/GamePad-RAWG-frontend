@@ -12,7 +12,6 @@ import Header from "./components/Header";
 import LastThirtyDays from "./components/LastThirtyDays";
 import ThisWeek from "./components/ThisWeek";
 import NextWeek from "./components/NextWeek";
-import ReleaseCalendar from "./components/ReleaseCalendar";
 import BestOfTheYears from "./components/BestOfTheYears";
 import Popular from "./components/Popular";
 import AllTimeTop from "./components/AllTimeTop";
@@ -106,7 +105,6 @@ function App() {
         <Route path="/discover/last-30-days" element={<LastThirtyDays />} />
         <Route path="/discover/this-week" element={<ThisWeek />} />
         <Route path="/discover/next-week" element={<NextWeek />} />
-        <Route path="/video-game-releases" element={<ReleaseCalendar />} />
         <Route path="/discover/best-of-the-year" element={<BestOfTheYears />} />
         <Route path="/discover/popular-in-2021" element={<Popular />} />
         <Route path="/discover/all-time-top" element={<AllTimeTop />} />
