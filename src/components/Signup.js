@@ -14,7 +14,6 @@ const Signup = ({ handleToken }) => {
 
   const handleClick = async (event) => {
     event.preventDefault();
-
     if (!email || !username || !password) {
       setErrorMessage("Please complete all fields.");
     } else if (!email.includes("@")) {

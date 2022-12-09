@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import loader from "../assets/images/loader.gif";
 
-const Home = ({ search }) => {
+const Home = ({ token, search }) => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -15,7 +15,6 @@ const Home = ({ search }) => {
         const response = await axios.get(
           `http://localhost:4000/home?search=${search}`
         );
-        // console.log("ok2=>", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -40,13 +39,14 @@ const Home = ({ search }) => {
               <div key={index}>
                 <div className="game">
                   <Link to={`/games/${game.id}`}>
-                    <img src={game.background_image} alt="" />
+                    <img src={game.background_image} alt="visuel du jeu" />
                   </Link>
                   <div className="title-game">
                     <div className="platforms-names">
-                      {game.parent_platforms.map((platform, index) => {
-                        return <p key={index}>{platform.platform.name}</p>;
-                      })}
+                      {game.parent_platforms &&
+                        game.parent_platforms.map((platform, index) => {
+                          return <p key={index}>{platform.platform.name}</p>;
+                        })}
                     </div>
                     <h2>{game.name}</h2>
                   </div>

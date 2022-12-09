@@ -46,6 +46,7 @@ import {
   faStore,
   faFolderPlus,
   faDesktop,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 library.add(
   faBars,
@@ -58,11 +59,13 @@ library.add(
   faGamepad,
   faStore,
   faFolderPlus,
-  faDesktop
+  faDesktop,
+  faCircleXmark
 );
 
 function App() {
   const [token, setToken] = useState(Cookies.get("token") || null);
+
   const [search, setSearch] = useState("");
   const [genres, setGenres] = useState("");
 
@@ -97,8 +100,8 @@ function App() {
           path="/user/login"
           element={<Login handleToken={handleToken} />}
         />
-        <Route path="/games/:id" element={<Game />} />
-        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/games/:id" element={<Game token={token} />} />
+        <Route path="/favorites" element={<Favorites token={token} />} />
         <Route path="/reviews/popular" element={<Reviews />} />
         <Route path="/discover/last-30-days" element={<LastThirtyDays />} />
         <Route path="/discover/this-week" element={<ThisWeek />} />

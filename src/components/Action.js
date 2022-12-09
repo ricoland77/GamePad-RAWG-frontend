@@ -13,9 +13,8 @@ const Action = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `https://api.rawg.io/api/games?key=373c0a426b8e43d19559088f49c43527&genres=${"action"}`
+          `http://localhost:4000/action?genres=${"action"}`
         );
-        // console.log("ok2=>", response.data);
         setData(response.data);
         setIsLoading(false);
       } catch (error) {
@@ -33,14 +32,14 @@ const Action = ({ search }) => {
     <section className="section-home">
       <Menu />
       <div className="home">
-        <h1>New and trending</h1>
+        <h1>Action</h1>
         <div className="all-games">
           {data.results.map((game, index) => {
             return (
               <div key={index}>
                 <div className="game">
                   <Link to={`/games/${game.id}`}>
-                    <img src={game.background_image} alt="" />
+                    <img src={game.background_image} alt="visuel du jeu" />
                   </Link>
                   <div className="title-game">
                     <div className="platforms-names">

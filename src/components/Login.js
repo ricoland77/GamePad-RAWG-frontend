@@ -6,11 +6,10 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 const Login = ({ handleToken }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-
-  const navigate = useNavigate();
 
   const handleClick = async (event) => {
     event.preventDefault();
@@ -32,7 +31,6 @@ const Login = ({ handleToken }) => {
         navigate("/home");
       } catch (error) {
         console.log(error.message);
-        //   console.log(error.response);
       }
     }
   };
