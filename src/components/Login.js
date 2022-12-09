@@ -28,7 +28,7 @@ const Login = ({ handleToken }) => {
         }
 
         alert("You are connect.");
-        navigate("/home");
+        navigate("/");
       } catch (error) {
         console.log(error.message);
       }

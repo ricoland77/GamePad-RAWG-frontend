@@ -6,7 +6,7 @@ const Header = ({ search, setSearch, handleToken, token }) => {
   return (
     <div className="header">
       <div className="logo-search">
-        <Link to="/home">
+        <Link to="/">
           <span className="logo-rawg">RAWG</span>
         </Link>
         <input

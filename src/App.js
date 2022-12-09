@@ -88,7 +88,7 @@ function App() {
       />
       <Routes>
         <Route
-          path="/home"
+          path="/"
           element={<Home search={search} setSearch={setSearch} />}
         />
         <Route

@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Menu = () => {
   return (
     <section className="menu">
-      <Link to="/home">
+      <Link to="/">
         <h2>Home</h2>
       </Link>
 

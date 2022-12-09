@@ -30,7 +30,7 @@ const Signup = ({ handleToken }) => {
         }
 
         alert("Your account has been created");
-        navigate("/home");
+        navigate("/");
       } catch (error) {
         console.log(error.response.data.message);
         const message = error.response.data.message;
