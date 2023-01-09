@@ -13,9 +13,12 @@ const Favorites = ({ token }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(`http://localhost:4000/favorites`, {
-          token,
-        });
+        const response = await axios.post(
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/favorites`,
+          {
+            token,
+          }
+        );
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

@@ -13,7 +13,7 @@ const Strategy = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/strategy?genres=${"strategy"}`
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/strategy?genres=${"strategy"}`
         );
         setData(response.data);
         setIsLoading(false);

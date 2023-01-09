@@ -13,7 +13,7 @@ const RPG = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/rpg?genres=${"role-playing-games-rpg"}`
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/rpg?genres=${"role-playing-games-rpg"}`
         );
         setData(response.data);
         setIsLoading(false);

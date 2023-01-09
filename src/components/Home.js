@@ -13,7 +13,7 @@ const Home = ({ token, search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/home?search=${search}`
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/home?search=${search}`
         );
         setData(response.data);
         setIsLoading(false);

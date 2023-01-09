@@ -13,7 +13,7 @@ const Action = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/action?genres=${"action"}`
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/action?genres=${"action"}`
         );
         setData(response.data);
         setIsLoading(false);

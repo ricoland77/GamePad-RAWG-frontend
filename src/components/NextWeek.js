@@ -13,7 +13,7 @@ const NextWeek = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/discover/next-week?dates=${"2022-12-30,2022-12-31"}`
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/discover/next-week?dates=${"2022-12-30,2022-12-31"}`
         );
         setData(response.data);
         setIsLoading(false);

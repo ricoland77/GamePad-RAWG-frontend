@@ -20,11 +20,14 @@ const Signup = ({ handleToken }) => {
       setErrorMessage("Your email is not valid.");
     } else {
       try {
-        const response = await axios.post("http://localhost:4000/user/signup", {
-          email: email,
-          username: username,
-          password: password,
-        });
+        const response = await axios.post(
+          "https://site--rawg-backend--dk8jf2pny52x.code.run/user/signup",
+          {
+            email: email,
+            username: username,
+            password: password,
+          }
+        );
         if (response.data.token) {
           handleToken(response.data.token);
         }

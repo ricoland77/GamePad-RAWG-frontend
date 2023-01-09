@@ -16,7 +16,9 @@ const Game = ({ token }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/game?id=${id}`);
+        const response = await axios.get(
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/game?id=${id}`
+        );
         setData(response.data);
         setIsLoading(false);
       } catch (error) {

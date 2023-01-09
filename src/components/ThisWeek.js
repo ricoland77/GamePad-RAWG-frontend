@@ -13,7 +13,7 @@ const ThisWeek = ({ search }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/discover/this-week?dates=${"2022-12-27,2022-12-29"}`
+          `https://site--rawg-backend--dk8jf2pny52x.code.run/discover/this-week?dates=${"2022-12-27,2022-12-29"}`
         );
         setData(response.data);
         setIsLoading(false);
